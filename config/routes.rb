@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+  root to: 'posts#index'
   resources :posts do
     resources :comments
   end
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  resources :users
+  post '/auth/login', to: 'auth#login'
+  get '/*a', to: 'application#routing_error'
 end
