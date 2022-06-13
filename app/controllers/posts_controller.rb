@@ -4,9 +4,9 @@ class PostsController < ApplicationController
 
   # GET /posts
   def index
-    @posts = Post.all
+    posts = paginate_collection(Post.all)
 
-    respond_with_json(@posts)
+    render_json(serializer, posts, is_collection: true)
   end
 
   # GET /posts/1
@@ -48,5 +48,9 @@ class PostsController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def post_params
       params.permit(:title, :body)
+    end
+
+    def serializer
+      PostSerializer
     end
 end

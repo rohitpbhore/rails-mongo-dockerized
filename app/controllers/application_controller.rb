@@ -2,6 +2,7 @@ class ApplicationController < ActionController::API
     include ApiResponders
     include ApiRescuable
     include JwtWebToken
+    include PaginateableController
 
     def routing_error
       respond_with_error("Routing Error", :not_found)
