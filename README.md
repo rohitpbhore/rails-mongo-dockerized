@@ -1,4 +1,4 @@
-# An example Rails + Docker + MongoDB app
+# An example Rails API + MongoDB app with JWT authentication over Docker containers
 
 This is the sample Ruby on Rails (API only) application to be built using MongoDB and Docker. Web and DB running on separate Docker containers.
 # Prerequisites
